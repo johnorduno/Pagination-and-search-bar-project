@@ -11,6 +11,7 @@ function filterStudents(){
     if(filterValue != ""){
         isSearch = true;
         current_page = 1
+        description_element.innerHTML = `<h5>Search for ${searchBar.value}</h5>`;
         prevNext_element.innerHTML = "";
         for(let m = 0;m<list_items.length;m++){
             let student_name = list_items[m].getElementsByTagName('h3')[0];
@@ -27,6 +28,7 @@ function filterStudents(){
         isSearch = false;
         current_page = 1;
         prevNext_element.innerHTML = "";
+        description_element.innerHTML = `<h5>All Students List, Page ${current_page}</h5>`;
         createNext(list_items);
         //display initial list
         DisplayList(list_items,list_element,rows,1);

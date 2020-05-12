@@ -107,3 +107,14 @@ body {
     display: inline-block;
     /* float: right; */
 }
+
+#pageDescription {
+    background-color: white;
+    margin:auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width:50%;
+    text-align: center;
+}

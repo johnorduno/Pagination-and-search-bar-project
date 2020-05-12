@@ -8,6 +8,7 @@ const list_element = document.getElementById('list');
 const pagination_element = document.getElementById('pagination');
 const prevNext_element = document.getElementById('prevNext');
 const rows = 6;
+const description_element = document.getElementById('pageDescription');
 
 let current_page = 1;
 let numButtons = 5;
@@ -18,7 +19,7 @@ let isSearch = false;
 //create initial next button
 createNext(list_items);
 
-
+description_element.innerHTML = `<h5>All Students List, Page ${current_page}</h5>`
 //*************************************************************************************************************************
 
 //Display paginated items
@@ -118,14 +119,15 @@ function paginationButton(page, items) {
     //button click event
     button.addEventListener('click',function() {
         current_page = page;
-
         //display new list
         DisplayList(items, list_element, rows, current_page);
     
         if (!isSearch){
             setupPagination(list_items,pagination_element,rows,current_page);
+            description_element.innerHTML = `<h5>All Students List, Page ${current_page}</h5>`;
         }else{
             setupPagination(items,pagination_element,rows,current_page);
+            description_element.innerHTML = `<h5>Search for ${searchBar.value}</h5>`
         }
         //clear the previous/next button container
         prevNext_element.innerHTML = "";
